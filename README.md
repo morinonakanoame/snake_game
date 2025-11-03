@@ -1,1 +1,1 @@
-# snake_game
+its mini game a snake hendia!
