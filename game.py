@@ -88,10 +88,6 @@ while running:
         fruit_y = random.randint(1, 18) * pix_size
 
         snakeLength += 1
-
-    if [snake_x, snake_y] in snakeBody[:-1]:
-        break
-        
         
     for pixel in snakeBody:
         pygame.draw.rect(window, white, [pixel[0], pixel[1], pix_size, pix_size])
@@ -99,5 +95,14 @@ while running:
     pygame.draw.rect(window, orange, [fruit_x, fruit_y, pix_size, pix_size])
     pygame.display.update()
 
+    if [snake_x, snake_y] in snakeBody[:-1]:
+        font = pygame.font.SysFont('arial', 72)
+        text = font.render('Game Over!', True, white)
+        window.blit(text, (200, 250))
+        
+        pygame.display.update()
+        pygame.time.delay(3000)
+        running = False
+        
     clock.tick(10)
 pygame.quit()
