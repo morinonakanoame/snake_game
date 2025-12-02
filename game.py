@@ -57,7 +57,6 @@ while running:
             dy = pix_size
             dx = 0
                 
-        
     snake_x += dx
     snake_y += dy
         
